@@ -12,6 +12,20 @@ public class Main {
         }
         System.out.println(" ");
 
+        Sorting.selectionSortingAscending(array);
+
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println(" ");
+
+        Sorting.selectionSortingDescending(array);
+
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println(" ");
+
         Sorting.bubbleSortingAscending(array);
 
         for (int i = 0; i < size; i++) {
