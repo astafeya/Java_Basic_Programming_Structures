@@ -1,6 +1,74 @@
 package com.homework;
 
+import java.util.Arrays;
+
 public class Sorting {
+    public static void runTimeEvaluationAscendingSorting(int size, int minValue, int maxValue) {
+        int[] array = Sorting.createRandomArray(size, minValue, maxValue);
+        int[] copyArray = new int[size];
+        long startTime;
+        long estimatedTime;
+
+        getCopy(array, copyArray);
+        startTime = System.nanoTime();
+        Sorting.bubbleSortingAscending(copyArray);
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println("bubbleSortingAscending: " + estimatedTime);
+
+        getCopy(array, copyArray);
+        startTime = System.nanoTime();
+        Sorting.selectionSortingAscending(copyArray);
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println("selectionSortingAscending: " + estimatedTime);
+
+        getCopy(array, copyArray);
+        startTime = System.nanoTime();
+        Arrays.sort(copyArray);
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println("integratedSortingAscending: " + estimatedTime);
+    }
+
+    public static void runTimeEvaluationDescendingSorting(int size, int minValue, int maxValue) {
+        int[] array = Sorting.createRandomArray(size, minValue, maxValue);
+        int[] copyArray = new int[size];
+        long startTime;
+        long estimatedTime;
+
+        getCopy(array, copyArray);
+        startTime = System.nanoTime();
+        Sorting.bubbleSortingDescending(copyArray);
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println("bubbleSortingDescending: " + estimatedTime);
+
+        getCopy(array, copyArray);
+        startTime = System.nanoTime();
+        Sorting.selectionSortingDescending(copyArray);
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println("selectionSortingDescending: " + estimatedTime);
+
+        getCopy(array, copyArray);
+        startTime = System.nanoTime();
+        Arrays.sort(copyArray);
+        for (int i = 0, j = copyArray.length - 1; i < j; i++, j--) {
+            int tmp = copyArray[i];
+            copyArray[i] = copyArray[j];
+            copyArray[j] = tmp;
+        }
+        estimatedTime = System.nanoTime() - startTime;
+        System.out.println("integratedSortingDescending: " + estimatedTime);
+    }
+
+    private static void getCopy(int[] array, int[] copy) {
+        if (array.length != copy.length) {
+            return;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            copy[i] = array[i];
+        }
+        return;
+    }
+
     public static int[] createRandomArray(int size, int minValue, int maxValue) {
         if (size < 0) size = 10;
         int[] array = new int[size];
