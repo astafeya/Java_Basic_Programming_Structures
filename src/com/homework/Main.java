@@ -20,5 +20,9 @@ public class Main {
         int[][] matrix = TwoDimensionalArrays.createRandomMatrix(rows, columns, 10, 20);
 
         TwoDimensionalArrays.outputMatrix(matrix, rows, columns);
+
+        int[] array = OneDimensionalArrays.createRandomArray(10, 10, 60);
+
+        OneDimensionalArrays.outputArray(array);
     }
 }
