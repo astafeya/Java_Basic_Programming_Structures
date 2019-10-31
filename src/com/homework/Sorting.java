@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Sorting {
     public static void runTimeEvaluationAscendingSorting(int size, int minValue, int maxValue) {
-        int[] array = Sorting.createRandomArray(size, minValue, maxValue);
+        int[] array = OneDimensionalArrays.createRandomArray(size, minValue, maxValue);
         int[] copyArray = new int[size];
         long startTime;
         long estimatedTime;
@@ -29,7 +29,7 @@ public class Sorting {
     }
 
     public static void runTimeEvaluationDescendingSorting(int size, int minValue, int maxValue) {
-        int[] array = Sorting.createRandomArray(size, minValue, maxValue);
+        int[] array = OneDimensionalArrays.createRandomArray(size, minValue, maxValue);
         int[] copyArray = new int[size];
         long startTime;
         long estimatedTime;
@@ -67,24 +67,6 @@ public class Sorting {
             copy[i] = array[i];
         }
         return;
-    }
-
-    public static int[] createRandomArray(int size, int minValue, int maxValue) {
-        if (size <= 0) size = 10;
-        int[] array = new int[size];
-        int max = maxValue - minValue + 1;
-        if (minValue == 0) {
-            maxValue = 0;
-        }
-        else if (minValue > 0) {
-            maxValue = -minValue;
-            max--;
-        }
-
-        for (int i = 0; i < size; i++) {
-            array[i] = (int) Math.round((Math.random() * max) - maxValue);
-        }
-        return array;
     }
 
     public static void bubbleSortingDescending(int[] array) {
