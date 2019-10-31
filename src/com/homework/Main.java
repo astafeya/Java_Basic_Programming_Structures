@@ -14,5 +14,16 @@ public class Main {
 
         long value = 25;
         Factorial.runTimeEvaluation(value);
+
+        int rows = 8;
+        int columns = 8;
+        int[][] matrix = TwoDimensionalArrays.createRandomMatrix(rows, columns, 10, 20);
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.print("\n");
+        }
     }
 }
