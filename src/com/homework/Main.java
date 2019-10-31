@@ -9,5 +9,10 @@ public class Main {
         int maxValue = 100;
         Sorting.runTimeEvaluationAscendingSorting(size, minValue, maxValue);
         Sorting.runTimeEvaluationDescendingSorting(size, minValue, maxValue);
+
+        long value = 25;
+        long result1 = Factorial.cyclicFactorial(value);
+        long result2 = Factorial.recursiveFactorial(value);
+        System.out.println(result1 + " " + result2);
     }
 }
