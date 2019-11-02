@@ -4,25 +4,19 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int size = 25;
-        int minValue = -100;
-        int maxValue = 100;
-        Sorting.runTimeEvaluationAscendingSorting(size, minValue, maxValue);
-        Sorting.runTimeEvaluationDescendingSorting(size, minValue, maxValue);
+        System.out.println("Class Sorting");
+        Sorting.runTimeEvaluationAscendingSorting(25, -100, 100);
+        Sorting.runTimeEvaluationDescendingSorting(25, -100, 100);
 
-        System.out.println(" ");
+        System.out.println("\nClass Factorial");
+        Factorial.runTimeEvaluation((long) 25);
 
-        long value = 25;
-        Factorial.runTimeEvaluation(value);
-
-        int rows = 8;
-        int columns = 8;
-        int[][] matrix = TwoDimensionalArrays.createRandomMatrix(rows, columns, 10, 20);
-
-        TwoDimensionalArrays.outputMatrix(matrix, rows, columns);
-
-        int[] array = OneDimensionalArrays.createRandomArray(10, 10, 60);
-
-        OneDimensionalArrays.outputArray(array);
+        System.out.println("\nClass Drawing");
+        Drawing.drawRectangle(5, 10);
+        Drawing.drawTriangle(8, "upper-left");
+        Drawing.drawTriangle(8, "bottom-left");
+        Drawing.drawTriangle(8, "upper-right");
+        Drawing.drawTriangle(8, "bottom-right");
+        
     }
 }
